@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>TLE-ICT - E-Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;}
+
+    :root {
+      --red:#c20d0d;
+      --blue:#0050a0;
+      --darkblue:rgba(0,26,82,0.9);
+      --yellow:#f8d210;
+      --white:#ffffff;
+    }
+
+    html {scroll-behavior:smooth;}
+
+    body {
+      background:linear-gradient(135deg,#4a90e2,#6bb6ff);
+      color:var(--white);
+      padding-top:100px;
+    }
+
+    /* NAVBAR */
+    header {
+      display:flex; justify-content:space-between; align-items:center;
+      background-color:var(--darkblue); padding:20px 70px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.2);
+      position:fixed; top:0; width:100%; z-index:10;
+    }
+    .logo {font-size:1.8rem; font-weight:800; color:var(--white);}
+    nav ul {list-style:none; display:flex; gap:25px;}
+    nav ul li a {
+      text-decoration:none; color:var(--white); background-color:var(--red);
+      font-weight:600; padding:8px 18px; border-radius:8px; transition:0.3s;
+    }
+    nav ul li a:hover {background-color:var(--white); color:var(--red);}
+    .grade {background-color:var(--yellow); color:var(--darkblue); font-weight:600; padding:8px 18px; border-radius:25px; font-size:0.9rem;}
+
+    /* HEADLINE */
+    .headline {
+      position:relative;
+      background-color:var(--red);
+      border-top:4px solid var(--yellow);
+      border-bottom:4px solid var(--yellow);
+      color:var(--white);
+      text-align:center;
+      padding:20px 0;
+      font-size:2.2rem;
+      font-weight:800;
+      width:100vw;
+      left:50%;
+      transform:translateX(-50%);
+      animation:slideAcross 1.5s ease-out;
+    }
+
+    @keyframes slideAcross {
+      0%{transform:translate(-150%,0); opacity:0;}
+      60%{opacity:1;}
+      100%{transform:translate(-50%,0);}
+    }
+
+    /* ===== UPDATED LESSON SECTION ===== */
+    .lessons-section {
+      width: 90%;
+      margin: 40px auto;
+    }
+
+    .lessons-container {
+      display: flex;
+      align-items: stretch; /* match heights */
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .lessons-list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .lesson-bar {
+      display: block;
+      background-color: #002060;
+      color: white;
+      text-decoration: none;
+      border: 3px solid yellow;
+      padding: 15px 20px;
+      margin: 8px 0;
+      font-weight: bold;
+      font-size: 1.1rem;
+      width: 100%;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .lesson-bar:hover {
+      transform: scale(1.03);
+      background-color: #00359c;
+    }
+
+    .lesson-image {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lesson-image img {
+      height: 100%; /* matches height of lesson list */
+      width: 500px;
+      border: 5px solid yellow;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+
+    /* ACTIVITY ICONS */
+    .activities {
+      display:flex;
+      justify-content:center;
+      gap:40px;
+      margin:50px 0;
+      flex-wrap:wrap;
+    }
+
+    .activity {
+      text-align:center;
+      cursor:pointer;
+      transition:transform 0.3s ease;
+    }
+
+    .activity:hover {transform:scale(1.1);}
+    .activity i {
+      font-size:4rem;
+      color:var(--darkblue);
+      background-color:var(--yellow);
+      border-radius:50%;
+      padding:25px;
+      box-shadow:0 4px 10px rgba(0,0,0,0.3);
+    }
+
+    .caption {
+      margin-top:10px;
+      background-color:var(--red);
+      border:3px solid var(--yellow);
+      border-radius:8px;
+      padding:5px 10px;
+      color:var(--white);
+      font-weight:600;
+      width:180px;
+      margin-left:auto;
+      margin-right:auto;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">E-PORTFOLIO</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="personal.html">Personal Space</a></li>
+      <li><a href="tle.html">TLE-ICT</a></li>
+      <li><a href="ap.html">AP</a></li>
+    </ul>
+  </nav>
+  <div class="grade">Grade 9 - Fairness</div>
+</header>
+
+<!-- HEADLINE -->
+<div class="headline">LESSONS AND TOPICS (2ND QUARTER)</div>
+
+<!-- LESSON BARS -->
+<section class="lessons-section">
+  <div class="lessons-container">
+    <div class="lessons-list">
+      <a href="tleL1.html" class="lesson-bar">LESSON 1: Introduction to CSS</a>
+      <a href="tleL2.html" class="lesson-bar">LESSON 2: Style Sheets</a>
+      <a href="tleL3.html" class="lesson-bar">LESSON 3: Display Properties, Div, and Span</a>
+      <a href="tleL4.html" class="lesson-bar">LESSON 4: CSS Rule</a>
+      <a href="tleL5.html" class="lesson-bar">LESSON 5: CSS Selectors</a>
+      <a href="tleL6.html" class="lesson-bar">LESSON 6: Setting Dimensions</a>
+    </div>
+
+    <div class="lesson-image">
+      <img src="images/tle-pic.png" alt="TLE Illustration">
+    </div>
+  </div>
+</section>
+
+<!-- ACTIVITIES -->
+<div class="headline">SCHOOL ACTIVITIES (2ND QUARTER)</div>
+
+<section class="activities">
+  <a href="bwk.html" class="activity">
+    <i class="fa-solid fa-sun"></i>
+    <div class="caption">BUWAN NG WIKA</div>
+  </a>
+
+  <a href="intrams.html" class="activity">
+    <i class="fa-solid fa-fire"></i>
+    <div class="caption">INTRAMURALS</div>
+  </a>
+
+  <a href="scimonth.html" class="activity">
+    <i class="fa-solid fa-atom"></i>
+    <div class="caption">SCIENCE MONTH</div>
+  </a>
+
+  <a href="apmonth.html" class="activity">
+    <i class="fa-solid fa-globe"></i>
+    <div class="caption">AP MONTH</div>
+  </a>
+
+  <a href="teachersday.html" class="activity">
+    <i class="fa-solid fa-book"></i>
+    <div class="caption">TEACHERS' DAY</div>
+  </a>
+</section>
+
+</body>
+</html>
