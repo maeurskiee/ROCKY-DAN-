@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AP - E-Portfolio</title>
+
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Poppins';
+      animation:slideAcross 0.5s ease-out;
+    }
+
+    @keyframes slideAcross {
+      0%{transform:translate(-150%,0); opacity:0;}
+      60%{opacity:1;}
+      100%{transform:translate(-50%,0);}
+}
+
+    :root {
+      --red:#c20d0d;
+      --blue:#0050a0;
+      --darkblue:rgba(0,26,82,0.9);
+      --yellow:#f8d210;
+      --white:#ffffff;
+    }
+
+    html {scroll-behavior:smooth;}
+
+    body {
+      background:linear-gradient(135deg,#4a90e2,#6bb6ff);
+      color:var(--white);
+      padding-top:100px;
+    }
+
+    /* NAVBAR */
+    header {
+      display:flex; justify-content:space-between; align-items:center;
+      background-color:var(--darkblue); padding:20px 70px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.2);
+      position:fixed; top:0; width:100%; z-index:10;
+    }
+    .logo {font-size:1.8rem; font-weight:800; color:var(--white);}
+    nav ul {list-style:none; display:flex; gap:25px;}
+    nav ul li a {
+      text-decoration:none; color:var(--white); background-color:var(--red);
+      font-weight:600; padding:8px 18px; border-radius:8px; transition:0.3s;
+    }
+    nav ul li a:hover {background-color:var(--white); color:var(--red);}
+    .grade {background-color:var(--yellow); color:var(--darkblue); font-weight:600; padding:8px 18px; border-radius:25px; font-size:0.9rem;}
+
+    /* HEADLINE */
+    .headline {
+      position:relative;
+      background-color:var(--red);
+      border-top:4px solid var(--yellow);
+      border-bottom:4px solid var(--yellow);
+      color:var(--white);
+      text-align:center;
+      padding:20px 0;
+      font-size:2.2rem;
+      font-weight:800;
+      width:100vw;
+      left:50%;
+      transform:translateX(-50%);
+      animation:slideAcross 1.5s ease-out;
+    }
+
+    @keyframes slideAcross {
+      0%{transform:translate(-150%,0); opacity:0;}
+      60%{opacity:1;}
+      100%{transform:translate(-50%,0);}
+    }
+
+    /* ===== MATCHED LESSON SECTION ===== */
+    .lessons-section {
+      width: 90%;
+      margin: 40px auto;
+    }
+
+    .lessons-container {
+      display: flex;
+      align-items: stretch; /* match heights */
+      justify-content: space-between;
+      gap: 30px;
+    }
+
+    .lessons-list {
+      flex: 1;
+      display: flex;
+      flex-direction: column;
+      align-items: flex-start;
+    }
+
+    .lesson-bar {
+      display: block;
+      background-color: #002060;
+      color: white;
+      text-decoration: none;
+      border: 3px solid yellow;
+      padding: 15px 20px;
+      margin: 8px 0;
+      font-weight: bold;
+      font-size: 1.1rem;
+      width: 100%;
+      transition: transform 0.3s, background-color 0.3s;
+    }
+
+    .lesson-bar:hover {
+      transform: scale(1.03);
+      background-color: #00359c;
+    }
+
+    .lesson-image {
+      flex: 0.8;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .lesson-image img {
+      height: 100%; /* same height as lesson list */
+      width: 500px;
+      border: 5px solid yellow;
+      border-radius: 20px;
+      object-fit: cover;
+    }
+  </style>
+</head>
+<body>
+
+<header>
+  <div class="logo">E-PORTFOLIO</div>
+  <nav>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="personal.html">Personal Space</a></li>
+      <li><a href="tle.html">TLE-ICT</a></li>
+      <li><a href="ap.html">AP</a></li>
+    </ul>
+  </nav>
+  <div class="grade">Grade 9 - Fairness</div>
+</header>
+
+<!-- HEADLINE -->
+<div class="headline">YUNIT II: MAYKROEKONOMIKS</div>
+
+<!-- LESSON BARS -->
+<section class="lessons-section">
+  <div class="lessons-container">
+    <div class="lessons-list">
+      <a href="apL1.html" class="lesson-bar">ARALIN 1: Demand</a>
+      <a href="apL2.html" class="lesson-bar">ARALIN 2: Supply</a>
+      <a href="apL3.html" class="lesson-bar">ARALIN 3: Price Elasticity</a>
+      <a href="apL4.html" class="lesson-bar">ARALIN 4: Market Equilibrium</a>
+      <a href="apL5.html" class="lesson-bar">ARALIN 5: Mga Estraktura ng Pamilihan</a>
+      <a href="apL6.html" class="lesson-bar">ARALIN 6: Papel ng Pamahalaan sa Regulasyon ng Pamilihan</a>
+    </div>
+
+    <div class="lesson-image">
+      <img src="AP.jpg" alt="AP Illustration">
+    </div>
+  </div>
+</section>
+
+</body>
+</html>

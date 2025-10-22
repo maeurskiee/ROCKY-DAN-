@@ -1,0 +1,408 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Personal Space - E-Portfolio</title>
+
+  <!-- Font + Icons -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+  <style>
+    * { margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif;animation:slideAcross 0.5s ease-out;
+    }
+
+    @keyframes slideAcross {
+      0%{transform:translate(-150%,0); opacity:0;}
+      60%{opacity:1;}
+      100%{transform:translate(-50%,0);}
+ }
+
+    :root {
+      --red: #c20d0d;
+      --blue: #0050a0;
+      --darkblue: rgba(0, 26, 82, 0.9);
+      --yellow: #f8d210;
+      --white: #ffffff;
+    }
+
+    html { scroll-behavior: smooth; }
+
+    body {
+      background: linear-gradient(135deg, #4a90e2, #6bb6ff);
+      color: var(--white);
+      padding-top: 100px;
+    }
+
+    /* NAVBAR */
+    header {
+      display:flex; justify-content:space-between; align-items:center;
+      background-color: var(--darkblue); padding:20px 70px;
+      box-shadow:0 2px 8px rgba(0,0,0,0.2);
+      position:fixed; top:0; width:100%; z-index:10;
+    }
+    .logo { font-size:1.8rem; font-weight:800; color: var(--white); }
+    nav ul { list-style:none; display:flex; gap:25px; }
+    nav ul li a {
+      text-decoration:none; color: var(--white); background-color: var(--red);
+      font-weight:600; padding:8px 18px; border-radius:8px; transition:0.3s ease;
+    }
+    nav ul li a:hover { background-color: var(--white); color: var(--red); }
+    .grade { background-color: var(--yellow); color: var(--darkblue); font-weight:600; padding:8px 18px; border-radius:25px; font-size:0.9rem; }
+
+    /* HEADLINES */
+    .headline {
+      background-color: var(--red);
+      border: 2px solid var(--yellow);
+      color: var(--white);
+      text-align: center;
+      padding: 15px 0;
+      font-size: 1.8rem;
+      font-weight: 800;
+      margin: 70px 0 40px 0;
+    }
+
+    /* PERSONAL DETAILS */
+    .personal-section {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center; /* centers the boxes nicely */
+  gap: 30px;
+  padding: 0 40px; /* reduce side padding */
+  flex-wrap: wrap;
+}
+
+    .media-box {
+      width: 45%;
+      height: 350px;
+      overflow-y: scroll;
+      border: 3px solid var(--yellow);
+      border-radius: 15px;
+      padding: 10px;
+      background-color: rgba(0, 26, 82, 0.5);
+     
+    }
+
+    .media-box img, .media-box video {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .text-box {
+      width: 45%;
+      background-color: rgba(0, 26, 82, 0.7);
+      border-radius: 15px;
+      padding: 20px;
+      min-height: 350px;
+      border: 2px solid var(--yellow);
+      text-align:justify;
+    }
+
+    .photo-row {
+      display: flex;
+      justify-content: center;
+      gap: 10px;
+      margin: 40px 0;
+    }
+
+    .photo-row .pic {
+      position: relative;
+    }
+
+    .photo-row img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid var(--yellow);
+      transition: opacity 0.3s ease;
+    }
+
+    .photo-row img.hover {
+      position: absolute;
+      top: 0;
+      left: 0;
+      opacity: 0;
+    }
+
+    .photo-row .pic:hover img.hover {
+      opacity: 1;
+    }
+
+    .star {
+      text-align: center;
+      color: var(--yellow);
+      font-size: 1.5rem;
+      margin-top: 5px;
+    }
+
+    /* CIRCLE OF FRIENDS */
+    .friends-box {
+      background-color: rgba(0, 26, 82, 0.7);
+      border-radius: 15px;
+      border: 2px solid var(--yellow);
+      display: flex;
+      align-items: center;
+      margin: 30px 70px;
+      overflow: hidden;
+      padding: 20px;
+      gap: 20px;
+    }
+
+    .friends-box img {
+      width: 200px;
+      height: 200px;
+      object-fit: cover;
+      border-radius: 10px;
+      transition: opacity 0.3s ease;
+    }
+
+    .friends-box img.hover {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .friends-box:hover img.hover {
+      opacity: 1;
+    }
+
+    .friends-text {
+      flex: 1;
+      text-align:justify;
+    }
+
+    /* MY FAMILY */
+    .family-photos {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 40px 0;
+    }
+
+    .family-photos img {
+      width: 250px;
+      height: 250px;
+      object-fit: cover;
+      border: 2px solid var(--yellow);
+      border-radius: 15px;
+    }
+
+    .family-textbox {
+      margin: 30px 70px;
+      padding: 20px;
+      background-color: rgba(0, 26, 82, 0.7);
+      border: 2px solid var(--yellow);
+      border-radius: 15px;
+      text-align:justify;
+    }
+
+    .family-row {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 30px;
+      margin: 40px 70px;
+    }
+
+    .family-row img {
+      width: 300px;
+      height: 300px;
+      border-radius: 10px;
+      object-fit: cover;
+      border: 2px solid var(--yellow);
+      transition: opacity 0.3s ease;
+    }
+
+    .family-row img.hover {
+      position: absolute;
+      opacity: 0;
+    }
+
+    .family-row:hover img.hover {
+      opacity: 1;
+    }
+
+    .family-row .text {
+      flex: 1;
+      background-color: rgba(0, 26, 82, 0.7);
+      border-radius: 10px;
+      padding: 20px;
+      border: 2px solid var(--yellow);
+      text-align:justify;
+    }
+
+    .bottom-gallery {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin: 40px 0 10px;
+      flex-wrap: wrap;
+    }
+
+    .bottom-gallery .item {
+      text-align: center;
+    }
+
+    .bottom-gallery img {
+      width: 220px;
+      height: 220px;
+      object-fit: cover;
+      border-radius: 10px;
+      border: 2px solid var(--yellow);
+    }
+
+    .bottom-gallery .caption {
+      background-color: rgba(0, 26, 82, 0.7);
+      border: 2px solid var(--yellow);
+      color: var(--white);
+      margin-top: 5px;
+      padding: 5px;
+      border-radius: 8px;
+      width: 220px;
+    }
+
+    .family-video {
+      text-align: center;
+      margin: 40px 0;
+    }
+
+    .family-video video {
+      width: 80%;
+      border: 3px solid var(--yellow);
+      border-radius: 15px;
+    }
+
+    .final-text {
+      text-align: center;
+      font-size: 1.5rem;
+      margin-bottom: 50px;
+      background-color: var(--red);
+      border: 2px solid var(--yellow);
+      width: fit-content;
+      margin-left: auto;
+      margin-right: auto;
+      padding: 10px 20px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- COMMON NAVBAR -->
+  <header>
+    <div class="logo">E-PORTFOLIO</div>
+    <nav>
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="personal.html">Personal Space</a></li>
+        <li><a href="tle.html">TLE-ICT</a></li>
+        <li><a href="ap.html">AP</a></li>
+      </ul>
+    </nav>
+    <div class="grade">Grade 9 - Fairness</div>
+  </header>
+
+  <!-- PERSONAL DETAILS -->
+  <div class="headline">PERSONAL DETAILS</div>
+
+  <section class="personal-section">
+    <div class="media-box">
+      <img src="maeur1.jpg" alt="yes">
+      <img src="maeur2.jpg" alt="yes">
+      <img src="maeur3.jpg" alt="yes">
+      <img src="maeur4.jpg" alt="yes">
+      <video src="maeurvid.mp4" controls></video>
+    </div>
+
+    <div class="text-box">
+      <p>Hey there! I'm Emannoel, born on 2010, but call me Maeur. Yep, that's my nickname—a unique and iconic name my parents gave me to be remembered. I currently turned 15 on the 7th of September 2025. I study in Las Pinas City National Science High School in 9th grade. I’m passionate about singing, dancing, acting, performing, drawing, travelling, watching films, listening to music, and sleeping! I find joy in expressing myself through creativity—whether that’s performing on stage, designing something, or simply making people smile. I also love exploring new things, because they let me share a part of me with others. Three words that would describe me are creative, positive, and faithful. I believe in using my talents to inspire others, staying optimistic no matter what, and trusting in God’s plan ♡ </p>
+    </div>
+  </section>
+
+  <div class="photo-row">
+    <div class="pic"><img src="fav1.jpg"><img src="1fav.jpg" class="hover"></div>
+    <div class="pic"><img src="fav2.jpg"><img src="2fav.jpg" class="hover"></div>
+    <div class="pic"><img src="fav3.jpg"><img src="3fav.jpg" class="hover"></div>
+    <div class="pic"><img src="fav4.jpg"><img src="4fav.jpg" class="hover"></div>
+    <div class="pic"><img src="fav5.jpg"><img src="5fav.jpg" class="hover"></div>
+  </div>
+  <div class="star">⭐ ⭐ ⭐ ⭐ ⭐</div>
+
+  <!-- CIRCLE OF FRIENDS -->
+  <div class="headline">CIRCLE OF FRIENDS</div>
+
+  <div class="friends-box">
+    <img src="church1.jpg"><img src="church2.jpg" class="hover">
+    <div class="friends-text"><p>This is my circle of friends in church. These wonderful people welcomed me and made me feel that I belong, am loved, and appreciated. They helped me find who I am in God's direction. They helped me be who I am. They helped me exactly when I needed their help. This circle is very important to me because they will be the one I will always run to for lifetime, and that is because we are bonded by one mission—and that is God's mission ♡ </p></div>
+  </div>
+
+  <div class="friends-box" style="flex-direction: row-reverse;">
+    <img src="school1.jpg"><img src="school2.jpg" class="hover">
+    <div class="friends-text"><p>This is my circle of friends in school. They are the ones whom I see and mingle with almost every day. Whenever I see them, I would always feel safe. I would feel welcomed. I would feel home. They were there when I needed them—whenever I needed notes for the classes I missed due to being excused, whenever I needed help with a lesson I couldn't understand, whenever I wanted to talk to someone who understands me. Because of them, school wasn't just a school—but a home as well ♡</p></div>
+  </div>
+
+  <div class="friends-box">
+    <img src="neighbor1.jpg"><img src="neighbor2.jpg" class="hover">
+    <div class="friends-text"><p>This is my friend group in our neighborhood. They are the ones whom I run to often whenever I need help since they're just one call away. They have been my family since my younger days. We were always together because our parents were close friends. Sometimes, you just can't ever separate us! We would celebrate birthdays together, eat together, and travel together. They were the ones who filled color in my world during the pandemic—when it lacked life and vibrance. These are the people who never failed to make me happy and wear the biggest smile on my face. As they say, home sweet home! ♡</p></div>
+  </div>
+
+  <!-- MY FAMILY -->
+  <div class="headline">MY FAMILY</div>
+
+  <div class="family-photos">
+    <img src="fam1.jpg"><img src="fam2.jpg"><img src="fam3.jpg"><img src="fam4.jpg"><img src="fam5.jpg">
+
+  </div>
+
+  <div class="family-textbox"><p>This is the Raquedan Family. We are one, strong, and loving family. In our family, I felt the safest. I felt guided. I felt growth. They are always there for me, to support me, and to stand beside me. My family members are literally the best people on earth. Believe me, words cannot ever explain—let alone a website—how I love my family and how important they are to me. One thing that I am most grateful for is that I live in a family where God is priority. Because of this, I grew stronger. I grew more mature and understanding. I grew more humble and patient—and that's because they taught me that loving God requires sacrifice, which helped me to be more faithful and God-trusting ♡</p></div>
+
+  <div class="family-row">
+    <img src="father.jpg"><img src="dad.jpg" class="hover">
+    <div class="text"><p>His name is Jesus D. Raquedan, 52 years old. He is one of the strongest people I know—emotionally and spiritually. My father is very humble, understanding, supportive, and faithful. He is the one who drove our family towards God. My father is not just my father but also my mentor, advisor, disciplinarian, and of course, number 1 supporter! He is the one who teaches all of us on how to live in God's way—asking us, "What will Jesus do?". OOH! I forgot to mention he is a very happy person and a comedian! He would often want to light up the mood and erase the negative energy.</p></div>
+  </div>
+
+  <div class="family-row" style="flex-direction: row-reverse;">
+    <img src="mother.jpg"><img src="mom.jpg" class="hover">
+    <div class="text"><p>Her name is Jona Mae M. Raquedan, 48 years old. My nickname "Maeur" was actually from my mom's "Mae". My mother is one, strong woman. She is a supermom! Some people would ask and compliment her for being able to raise her four boys and shape us into who we are today. My mother is kind, brave, and loving. Most of the time, my mom is whom I run to whenever I need help since she basically just have an answer to everything. Ever since, I have always felt my mom's presence—and I embrace that every moment. She was there when I cried, when I won medals, when I compete in competitions, and when I need her.  </p></div>
+  </div>
+
+  <div class="family-row">
+    <img src="kuya.jpg"><img src="qing.jpg" class="hover">
+    <div class="text"><p>This is my eldest brother Enrique "Qing" M. Raquedan, 20 years old. My kuya is one of the most intelligent people I know—emotionally, spiritually, and psychologically. He studies in UP Baguio with ComArts (Communication and Arts) as his course. He is a director, playwright, scriptwriter, photographer, cameraman, and other roles related to film industry. My kuya and I are very close, bonded by our interests and way of seeing things. He teaches me on how to live in humility, simplicity, and holiness. Aside from that, I learned emotional intelligence from him. He is very supportive, funny, understanding, and loving. With him, I feel safe and guided, because in every circumstance, he knows his way. </p></div>
+  </div>
+
+  <div class="family-row" style="flex-direction: row-reverse;">
+    <img src="dico.jpg"><img src="jem.jpg" class="hover">
+    <div class="text"><p>This is my second eldest brother Eoghan "Jem" M. Raquedan, 18 years old. He studies in OSJ Minor Seminary in San Jose, Batangas. You see, two of my brothers study in such a far place—the reason for my grief and loneliness. However, my brother still supports me and sees the best in me, no matter what. He is very humble, funny, and intelligent. Studying in a seminary was his calling from God, so he fulfilled it. Like my eldest brother, kuya Eoghan also teaches me lessons about how to live in God's will, how to know God, how to love God, and how to serve God. He is very wise and emotionally intelligent. As taught in the seminary, he is a simple, diligent, and responsible young man who wants everything to be tidy.</p></div>
+  </div>
+
+  <div class="family-row">
+    <img src="bunso.jpg"><img src="kiel.jpg" class="hover">
+    <div class="text"><p>This is my youngest sibling Ezekiel M. Raquedan, 12 years old, but we call him Kiel. He is currently in 7th grade and we both study in the same school! He just transferred here for his first year highschool. Kiel is very funny, talented, and artistic. He loves singing, dancing, acting, drawing, and listening to music. We are always together because we grew up very close with each other, bonded by our interests and sense of humor. Although sometimes he can be very grumpy and negative, he still never fails to lift a smile on my cheek. Kiel really brings out the positive energy even though he can be the one to take it out. He sings the same songs I sing and he likes the same artists I like. That's why we're really close! </p></div>
+  </div>
+
+  <div class="bottom-gallery">
+    <div class="item">
+      <img src="fam6.jpg">
+          </div>
+    <div class="item">
+      <img src="fam7.jpg">
+         </div>
+    <div class="item">
+      <img src="fam8.jpg">
+        </div>
+    <div class="item">
+      <img src="fam9.jpg">
+         </div>
+    <div class="item">
+      <img src="fam10.jpg">
+         </div>
+  </div>
+
+  
+  <div class="final-text">THE RAQUEDAN FAMILY</div>
+
+</body>
+</html>
