@@ -105,7 +105,8 @@ background:#00359c;
 /* IMAGE GRID */
 
 /* NOLI SECTION IMAGES */
-.gallery.noli {
+/* NORMAL gallery images (4th Quarter Events) */
+.gallery {
   display:flex;
   justify-content:center;
   gap:30px;
@@ -114,13 +115,15 @@ background:#00359c;
   flex-wrap:wrap;
 }
 
-.gallery.noli .card {
-  width:100%;  /* 2 images fit in one row */
+.gallery .card {
+  width:300px;  /* 3 images fit nicely in one row */
+  text-align:center;
 }
 
-.gallery.noli .card img {
+.gallery .card img {
   width:100%;
-  height:auto;  /* keep original aspect ratio */
+  height:200px;  /* big enough but fits in one row */
+  object-fit:cover;
   border:4px solid var(--yellow);
   border-radius:15px;
 }
@@ -238,7 +241,6 @@ background-color:var(--darkblue);
     <img src="noli2.png">
   </div>
 
-</section>
 </section>
 
 <div class="video-link">
