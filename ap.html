@@ -127,6 +127,31 @@
       border-radius: 20px;
       object-fit: cover;
     }
+
+       .quarter-buttons{
+    display: flex;
+    justify-content: center;
+    gap: 50px;
+    margin-top: 30px;
+}
+
+.quarter-btn{
+    padding: 40px 70px;      /* makes button bigger */
+    background-color:var(--red);
+    color:var(--white);
+    text-decoration:none;
+    border:3px solid var(--yellow);
+    border-radius:12px;
+    font-weight:800;
+    font-size:1.4rem;       /* bigger text */
+    transition:all 0.3s ease;
+
+}
+
+.quarter-btn:hover{
+    background-color:var(--darkblue);
+    transform:scale(1.05);
+}
   </style>
 </head>
 <body>
@@ -175,4 +200,5 @@
 
 </body>
 </html>
+
 
