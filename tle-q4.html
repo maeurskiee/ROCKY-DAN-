@@ -104,28 +104,26 @@ background:#00359c;
 
 /* IMAGE GRID */
 
-.gallery{
-display:flex;
-justify-content:center;
-gap:30px;
-margin:40px auto;
-width:90%;
-flex-wrap:wrap;
+/* NOLI SECTION IMAGES */
+.gallery.noli {
+  display:flex;
+  justify-content:center;
+  gap:30px;
+  margin:40px auto;
+  width:90%;
+  flex-wrap:wrap;
 }
 
-.card{
-text-align:center;
-width:300px;
+.gallery.noli .card {
+  width:45%;  /* 2 images fit in one row */
 }
 
-.card img{
-width:100%;
-height:600px;
-object-fit:cover;
-border:4px solid var(--yellow);
-border-radius:15px;
+.gallery.noli .card img {
+  width:100%;
+  height:auto;  /* keep original aspect ratio */
+  border:4px solid var(--yellow);
+  border-radius:15px;
 }
-
 .caption{
 margin-top:10px;
 background-color:var(--red);
@@ -228,19 +226,19 @@ background-color:var(--darkblue);
 
 </section>
 
-
 <div class="headline">NOLI ME TANGERE</div>
 
-<section class="gallery">
+<section class="gallery noli">
 
-<div class="card img">
-<img src="noli1.png">
-</div>
+  <div class="card">
+    <img src="noli1.png">
+  </div>
 
-<div class="card img">
-<img src="noli2.png">
-</div>
+  <div class="card">
+    <img src="noli2.png">
+  </div>
 
+</section>
 </section>
 
 <div class="video-link">
