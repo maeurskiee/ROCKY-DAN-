@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>TLE ICT - 3rd Quarter</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;800&display=swap" rel="stylesheet">
+
+<style>
+
+*{margin:0;padding:0;box-sizing:border-box;font-family:'Poppins',sans-serif;}
+
+:root{
+--red:#c20d0d;
+--blue:#0050a0;
+--darkblue:rgba(0,26,82,0.9);
+--yellow:#f8d210;
+--white:#ffffff;
+}
+
+body{
+background:linear-gradient(135deg,#4a90e2,#6bb6ff);
+color:var(--white);
+padding-top:100px;
+}
+
+/* NAVBAR */
+
+header{
+display:flex;
+justify-content:space-between;
+align-items:center;
+background-color:var(--darkblue);
+padding:20px 70px;
+position:fixed;
+top:0;
+width:100%;
+z-index:10;
+}
+
+.logo{
+font-size:1.8rem;
+font-weight:800;
+}
+
+nav ul{
+list-style:none;
+display:flex;
+gap:25px;
+}
+
+nav ul li a{
+text-decoration:none;
+color:var(--white);
+background-color:var(--red);
+padding:8px 18px;
+border-radius:8px;
+font-weight:600;
+}
+
+.grade{
+background-color:var(--yellow);
+color:var(--darkblue);
+padding:8px 18px;
+border-radius:25px;
+font-weight:600;
+}
+
+/* HEADLINE */
+
+.headline{
+background-color:var(--red);
+border-top:4px solid var(--yellow);
+border-bottom:4px solid var(--yellow);
+text-align:center;
+padding:20px;
+font-size:2rem;
+font-weight:800;
+margin-top:30px;
+}
+
+/* IMAGE GRID */
+
+.gallery{
+display:flex;
+justify-content:center;
+gap:30px;
+margin:40px auto;
+width:90%;
+flex-wrap:wrap;
+}
+
+.card{
+text-align:center;
+width:300px;
+}
+
+.card img{
+width:100%;
+height:200px;
+object-fit:cover;
+border:4px solid var(--yellow);
+border-radius:15px;
+}
+
+.caption{
+margin-top:10px;
+background-color:var(--red);
+border:3px solid var(--yellow);
+padding:8px;
+border-radius:8px;
+font-weight:600;
+}
+
+/* BUTTONS */
+
+.buttons{
+display:flex;
+justify-content:center;
+gap:40px;
+margin:60px 0;
+}
+
+.btn{
+background-color:var(--red);
+color:var(--white);
+padding:18px 40px;
+border:3px solid var(--yellow);
+border-radius:10px;
+text-decoration:none;
+font-weight:700;
+font-size:1.2rem;
+}
+
+.btn:hover{
+background-color:var(--darkblue);
+}
+
+</style>
+</head>
+
+<body>
+
+<header>
+<div class="logo">E-PORTFOLIO</div>
+
+<nav>
+<ul>
+<li><a href="index.html">Home</a></li>
+<li><a href="personal.html">Personal Space</a></li>
+<li><a href="tle.html">TLE-ICT</a></li>
+<li><a href="ap.html">AP</a></li>
+</ul>
+</nav>
+
+<div class="grade">Grade 9 - Fairness</div>
+</header>
+
+
+<div class="headline">BROWSER OUTPUTS</div>
+
+<section class="gallery">
+
+<div class="card">
+<img src="img1.jpg">
+<div class="caption">Lesson 1</div>
+</div>
+
+<div class="card">
+<img src="img2.jpg">
+<div class="caption">Lesson 2</div>
+</div>
+
+<div class="card">
+<img src="img3.jpg">
+<div class="caption">Lesson 3</div>
+</div>
+
+</section>
+
+
+<div class="headline">3RD QUARTER EVENTS</div>
+
+<section class="gallery">
+
+<div class="card">
+<img src="event1.jpg">
+<div class="caption">Event 1</div>
+</div>
+
+<div class="card">
+<img src="event2.jpg">
+<div class="caption">Event 2</div>
+</div>
+
+<div class="card">
+<img src="event3.jpg">
+<div class="caption">Event 3</div>
+</div>
+
+</section>
+
+
+<div class="buttons">
+
+<a href="tle.html" class="btn">Return</a>
+
+<a href="tle-q4.html" class="btn">4th Quarter</a>
+
+</div>
+
+</body>
+</html>
